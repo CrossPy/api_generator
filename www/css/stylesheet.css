@@ -1,1 +1,28 @@
-body {color: black;}
+.navbar {
+	margin-top: 25px;
+	margin-bottom: 25px;
+
+}
+
+.subtitle-container {
+	border-bottom: 1px solid #ccc;
+}
+
+#subtitle {
+	margin: 0;
+	color: #ccc;
+}
+
+#list-commands, #api-commands {
+	padding: 0;
+}
+
+#list-commands {
+	border-right: 1px solid #ccc;
+}
+
+.content-body {
+	background: #F7F4F4;
+	height: 400px;
+	padding: 15px;
+}
