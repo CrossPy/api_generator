@@ -1,3 +1,8 @@
+body {
+	margin: 0;
+	padding: 0;
+
+}
 .navbar {
 	margin-top: 25px;
 	margin-bottom: 25px;
@@ -5,7 +10,7 @@
 }
 
 .subtitle-container {
-	border-bottom: 1px solid #ccc;
+	border-bottom: 2px solid #ccc;
 }
 
 #subtitle {
@@ -14,15 +19,50 @@
 }
 
 #list-commands, #api-commands {
-	padding: 0;
+
 }
 
 #list-commands {
-	border-right: 1px solid #ccc;
+	border: 1px solid #ddd;
+	height: 600px;
+}
+
+#api-commands {
+	background-color: #646464;
+	color: #fff;
+	height: 600px;
 }
 
 .content-body {
-	background: #F7F4F4;
-	height: 400px;
-	padding: 15px;
+	
+}
+
+pre {
+	font-family: monospace;
+	background-color: #fff;
+	width: em(440);
+	padding: 0.5em;
+	border-radius: .25em;
+	box-shadow: .1em .1em .5em rgba(0, 0, 0, .45);
+	line-height: 0;
+	counter-reset: line;
+}
+
+#api-commands .content-body p {
+	display: block;
+	line-height: 0.5rem;
+	font-size: 1em;
+	&:before {
+		counter-increment: line;
+		content: counter(line);
+		display: inline-block;
+		border-right: 1px solid #ddd;
+		padding: 0.5em;
+		margin-right: .5em;
+		color: #888;
+	}
+}
+
+p {
+	margin: 0;
 }
