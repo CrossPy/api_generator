@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <title>Coming Soon</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="css/test.css">
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <div id="title">
+        <h1><span class="highlight">SUNAPI</span> 2.0 Generator</h1>
+      </div>
+      <div id="logo">
+        <img src="img/logo.png" width=200 height= 50>
+      </div>
+    </div>
+  </header>
+  <section id="main">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <article id="setting">
+            <h3>SUNAPI Setting</h3>
+            <div class="box-gray">
+              <div class="row">
+                <div class="col-md-12">
+                  <button class="btn btn-outline-warning feature" type="button" data-toggle="collapse" data-target="#mode" aria-expanded="false" aria-controls="mode">WDR</button>
+                  <div class="collapse" id="mode">
+                    <div class="row">
+                      <div class="col-md-3">
+                        <p class="mode">WDR level</p>
+                      </div>
+                      <div class="col-md-3">
+                        <button class="btn btn-outline-warning btn-block">Low</button>
+                      </div>
+                      <div class="col-md-3">
+                        <button class="btn btn-outline-warning btn-block">Middle</button>
+                      </div>
+                      <div class="col-md-3">
+                        <button class="btn btn-outline-warning btn-block">High</button>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-3">
+                        <p class="mode">Auto</p>
+                      </div>
+                      <div class="col-md-3">
+                        <button class="btn btn-outline-warning btn-block">On</button>
+                      </div>
+                      <div class="col-md-3">
+                        <button class="btn btn-outline-warning btn-block">Off</button>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-3">
+                        <p class="mode">Low Light</p>
+                      </div>
+                      <div class="col-md-3">
+                        <button class="btn btn-outline-warning btn-block">On</button>
+                      </div>
+                      <div class="col-md-3">
+                        <button class="btn btn-outline-warning btn-block">Off</button>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-3">
+                        <p class="mode">B/W</p>
+                      </div>
+                      <div class="col-md-3">
+                        <button class="btn btn-outline-warning btn-block">On</button>
+                      </div>
+                      <div class="col-md-3">
+                        <button class="btn btn-outline-warning btn-block">Off</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <button class="btn btn-outline-warning feature" type="button" data-toggle="collapse" data-target="#mode" aria-expanded="false" aria-controls="mode">HLC</button>
+                  <div class="collapse" id="mode">
+                    <div class="row">
+                      <div class="col-md-3">
+                        <p class="mode">HLC level</p>
+                      </div>
+                      <div class="col-md-3">
+                        <button class="btn btn-outline-warning btn-block">Low</button>
+                      </div>
+                      <div class="col-md-3">
+                        <button class="btn btn-outline-warning btn-block">Middle</button>
+                      </div>
+                      <div class="col-md-3">
+                        <button class="btn btn-outline-warning btn-block">High</button>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-3">
+                        <p class="mode">Mask</p>
+                      </div>
+                      <div class="col-md-2">
+                        <button class="btn btn-outline-warning btn-block">On</button>
+                      </div>
+                      <div class="col-md-2">
+                        <button class="btn btn-outline-warning btn-block">Off</button>
+                      </div>
+                      <div class="col-md-2">
+                        <button class="btn btn-outline-warning btn-block">Night Only</button>
+                      </div>
+                      <div class="col-md-2">
+                        <button class="btn btn-outline-warning btn-block">All Day</button>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-3">
+                        <p class="mode">Mask Color</p>
+                      </div>
+                      <div class="col-md-3">
+                        <button class="btn btn-outline-warning btn-block">On</button>
+                      </div>
+                      <div class="col-md-3">
+                        <button class="btn btn-outline-warning btn-block">Off</button>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-3">
+                        <p class="mode">B/W</p>
+                      </div>
+                      <div class="col-md-3">
+                        <button class="btn btn-outline-warning btn-block">On</button>
+                      </div>
+                      <div class="col-md-3">
+                        <button class="btn btn-outline-warning btn-block">Off</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col-lg-6">
+          <aside id="command">
+            <h3>SUNAPI Commands</h3>
+            <textarea id="sunapi_command" spellcheck="false" autocomplete="off" wrap="off" placeholder="/* Example: /stw-cgi/system.cgi?msubmenu=deviceinfo&action=view */"></textarea>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="container">
+      <p id="footer">&copy; 2018 <span class="highlight">Hanwha Techwin</span>, all rights reserved.</p>
+    </div>
+  </footer>
+  <script src="js/script.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
