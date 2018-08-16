@@ -106,14 +106,25 @@ header {
 	color: #ffae00;
 }
 
+#setting .box-gray .feature:hover {
+	background-color: #ffae00;
+	color: white;
+}
+
+
 .btn {
 	padding: 5px;
 	margin: 5px 0;
 	font-size: 12px;
 	border-radius: 0px;
 	font-weight: bold;
-	color: #000;
+	color: #ffae00;
 	box-sizing: border-box;
+	background-color: #fff;
+}
+
+.btn:hover {
+	color: white;
 }
 
 .mode {

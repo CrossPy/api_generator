@@ -25,11 +25,11 @@
         <div class="col-lg-6">
           <article id="setting">
             <h3>SUNAPI Setting</h3>
-            <div class="box-gray">
+            <div class="box-gray" id="accordion">
               <div class="row">
                 <div class="col-md-12">
-                  <button class="btn btn-outline-warning feature" type="button" data-toggle="collapse" data-target="#mode" aria-expanded="false" aria-controls="mode">WDR</button>
-                  <div class="collapse" id="mode">
+                  <button class="btn btn-outline-warning feature collapsed" type="button" data-toggle="collapse" data-target="#wdr" aria-expanded="false" aria-controls="hlc">WDR</button>
+                  <div class="collapse" id="wdr" aria-labelledby="wdr" data-parent="#accordion">
                     <div class="row">
                       <div class="col-md-3">
                         <p class="mode">WDR level</p>
@@ -82,8 +82,8 @@
               </div>
               <div class="row">
                 <div class="col-md-12">
-                  <button class="btn btn-outline-warning feature" type="button" data-toggle="collapse" data-target="#mode" aria-expanded="false" aria-controls="mode">HLC</button>
-                  <div class="collapse" id="mode">
+                  <button class="btn btn-outline-warning feature collapsed" type="button" data-toggle="collapse" data-target="#hlc" aria-expanded="false" aria-controls="hlc">HLC</button>
+                  <div class="collapse" id="hlc" aria-labelledby="hlc" data-parent="#accordion">
                     <div class="row">
                       <div class="col-md-3">
                         <p class="mode">HLC level</p>
@@ -108,7 +108,8 @@
                       <div class="col-md-2">
                         <button class="btn btn-outline-warning btn-block">Off</button>
                       </div>
-                      <div class="col-md-2">
+
+                      <div class="col-md-3">
                         <button class="btn btn-outline-warning btn-block">Night Only</button>
                       </div>
                       <div class="col-md-2">
@@ -143,6 +144,7 @@
             </div>
           </article>
         </div>
+
         <div class="col-lg-6">
           <aside id="command">
             <h3>SUNAPI Commands</h3>
