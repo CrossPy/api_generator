@@ -18,26 +18,34 @@ body {
 	color: #a8a8a8;
 }
 
+.padding-0 {
+	padding-right: 0;
+	padding-left: 0;
+
+}
+
+.config {
+	padding: 10px;
+	margin: 0;
+}
+
 /* Header */
 
 header {
 	border-bottom: 3px solid #e8491d;
 	min-height: 70px;
-	margin-top: 10px;
+	margin: 10px 0;
+	padding: 10px 0;
 }
 
 .highlight {
 	color: #e8491d;
 }
 
-#title {
-	float: left;
+#title, #logo {
+	margin: 0;
 }
 
-#logo {
-	float: right;
-	
-}
 
 #subtitle {
 	font-size: 12px;
@@ -77,63 +85,65 @@ header {
 }
 
 #setting {
+	border: 1px solid #e0e0e0;
 }
 
-#setting .box-gray {
-	border-radius: 3px;
-	background-color: #f5f5f5;
-	border: 1px solid #d4d4d4;
-	padding: 10px;
-	width: 100%;
-	box-sizing: border-box;
-
-}
-
-#setting h3 {
+.box-gray {
+	background-color: #eee;
 	margin: 0;
 }
 
-#setting p {
-	font-size: 12px;
-	font-family: Arial;
-	margin-bottom: 0 !important;
+/* Buttons */
+
+.box-gray .btn {
+	background-color: #eee;
+	padding: 10px;
 	font-weight: bold;
-}
-
-#setting .box-gray .feature {
-	padding: 5px 20px;
-	background-color: #fff;
-	color: #ffae00;
-}
-
-#setting .box-gray .feature:hover {
-	background-color: #ffae00;
-	color: white;
-}
-
-
-.btn {
-	padding: 5px;
-	margin: 5px 0;
-	font-size: 12px;
+	font-size: 14px;
 	border-radius: 0px;
-	font-weight: bold;
-	color: #ffae00;
-	box-sizing: border-box;
+	width: 100%;
+}
+
+.box-gray .btn:hover {
 	background-color: #fff;
 }
 
-.btn:hover {
-	color: white;
+.dropdown {
+
 }
 
-.mode {
-	padding: 5px;
-	font-size: 12px;
-	line-height: 1.5;
-	margin: 5px 0px;
-	color: black;
+.config > .dropdown > .dropdown-menu {
+	
 }
+
+.config > .dropdown > .btn {
+	width: 100%;
+	background-color: white;
+	color: #000;
+	border: 1px solid #ccc;
+	border-radius: 0px;
+	text-align: left;
+	padding: 3px;
+	font-size: 14px;
+}
+
+.config > .dropdown > .btn::after {
+	margin-left: 85%;
+
+}
+
+.config > .dropdown > .dropdown-menu {
+	font-size: 14px;
+}
+
+/* Menu for the tabs */
+
+.labels {
+	font-size: 14px;
+	font-weight: bold;
+}
+
+
 
 /* Footer */
 
@@ -147,23 +157,9 @@ footer #footer {
 
 /* Media Queries */
 
-@media (max-width: 1000px) {
-	#command, #setting {
-		width: 100%;
-		padding: 0;
-	
-	}
-
-	#command {
-		margin-top: 20px;
-		margin-bottom: 20px;
-	}
-
-	#setting {
-	}
-
-	footer {
-		text-align: center;
+@media (max-width: 991px) {
+	#title {
+		font-size: 2rem;
 	}
 
 }
