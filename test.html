@@ -39,6 +39,16 @@
                 <button class="btn btn-block collapsed backlight" type="button" data-toggle="collapse" data-target="#backlight" aria-expanded="false" aria-controls="backlight" value="/stw-cgi/image.cgi?msubmenu=camera&action=set">Backlight</button>
               </div>
             </div>
+            <div class="row box-gray">
+              <div class="col-md-3 padding-0">
+                <button class="btn btn-block collapsed privacy" type="button" data-toggle="collapse" data-target="#privacy" aria-expanded="false" aria-controls="privacy" value="/stw-cgi/image.cgi?msubmenu=privacy&action=set">Privacy Mask</button>
+              </div>
+              <div class="col-md-3 padding-0">
+                <button class="btn btn-block collapsed alarmout" type="button" data-toggle="collapse" data-target="#alarmout" aria-expanded="false" aria-controls="alarmout" value="/stw-cgi/io.cgi?msubmenu=alarmoutput&action=set">Alarm Output</button>
+              </div>
+            </div>
+
+            <!-- Button trigger starts here -->
             <div id="ir" class="collapse" aria-labelledby="ir" data-parent="#setting">
               <div class="row config">
                 <div class="col-md-5">
@@ -78,13 +88,13 @@
                   <p class="labels">Mode</p>
                 </div>
                 <select class="col-md-5 select">
-                  <option value="off">Off</option>
+                  <option value="off" selected=selected>Off</option>
                   <option value="blc">BLC</option>
                   <option value="hlc">HLC</option>
                   <option value="wdr">WDR</option>
                 </select> 
               </div>
-              <div class="row config blc">
+              <div class="row config blc" style="display: none">
                 <div class="col-md-5">
                   <p class="labels">BLC level</p>
                 </div>
@@ -94,7 +104,7 @@
                   <option value="">High</option>
                 </select>
               </div>
-              <div class="row config hlc">
+              <div class="row config hlc" style="display: none">
                 <div class="col-md-5">
                   <p class="labels">HLC level</p>
                 </div>
@@ -104,7 +114,7 @@
                   <option value="">High</option>
                 </select>
               </div>
-              <div class="row config hlc">
+              <div class="row config hlc" style="display: none">
                 <div class="col-md-5">
                   <p class="labels">Mask</p>
                 </div>
@@ -115,7 +125,7 @@
                   <option value="">All Day</option>
                 </select>
               </div>
-              <div class="row config hlc">
+              <div class="row config hlc" style="display: none">
                 <div class="col-md-5">
                   <p class="labels">Mask Color</p>
                 </div>
@@ -127,7 +137,7 @@
                   <option value="">Magenta</option>
                 </select>
               </div>
-              <div class="row config hlc">
+              <div class="row config hlc" style="display: none">
                 <div class="col-md-5">
                   <p class="labels">Mask Tone</p>
                 </div>
@@ -135,7 +145,7 @@
                   <input type="range" min="1" max="100" value="50" class="slider" id="range">
                 </div>
               </div>
-              <div class="row config hlc">
+              <div class="row config hlc" style="display: none">
                 <div class="col-md-5">
                   <p class="labels">Dimming</p>
                 </div>
