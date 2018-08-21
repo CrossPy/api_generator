@@ -23,7 +23,7 @@
   <section id="main">
     <div class="container">
       <div class="row">
-        <div class="col-lg-6">
+        <div class="col-lg-7">
           <article id="setting">
             <div class="row box-gray">
               <div class="col-md-3 padding-0" id="button1">
@@ -36,7 +36,7 @@
                 <button class="btn btn-block">White balance</button>
               </div>
               <div class="col-md-3 padding-0">
-                <button class="btn btn-block collapsed" type="button" data-toggle="collapse" data-target="#backlight" aria-expanded="false" aria-controls="backlight">Backlight</button>
+                <button class="btn btn-block collapsed backlight" type="button" data-toggle="collapse" data-target="#backlight" aria-expanded="false" aria-controls="backlight" value="/stw-cgi/image.cgi?msubmenu=camera&action=set">Backlight</button>
               </div>
             </div>
             <div id="ir" class="collapse" aria-labelledby="ir" data-parent="#setting">
@@ -55,28 +55,99 @@
                   </div>
                 </div>
                 -->
-                <select class="col-md-5" id="select" onchange="changeOption()">
+                <select class="col-md-5 select">
                   <option value="&Channel=0&Mode=Off">Off</option>
                   <option value="&Channel=0&Mode=Auto1">Auto 1</option>
                   <option value="&Channel=0&Mode=Auto2">Auto 2</option>
                   <option value="&Channel=0&Mode=Manual">Manual</option>
                 </select>
               </div>
+              <div class="row config">
+                <div class="col-md-5">
+                  <p class="labels">Level</p>
+                </div>
+                <div class="col-md-5 slidecontainer">
+                  <input type="range" min="1" max="100" value="50" class="slider" id="range">
+                </div>
+              </div>
+
             </div>
             <div id="backlight" class="collapse" aria-labelledby="backlight" data-parent="#setting">
-              <div class="row config">
+              <div class="row config check">
                 <div class="col-md-5">
                   <p class="labels">Mode</p>
                 </div>
+                <select class="col-md-5 select">
+                  <option value="off">Off</option>
+                  <option value="blc">BLC</option>
+                  <option value="hlc">HLC</option>
+                  <option value="wdr">WDR</option>
+                </select> 
+              </div>
+              <div class="row config blc">
                 <div class="col-md-5">
-                  <p class="options">Auto</p>
+                  <p class="labels">BLC level</p>
                 </div>
+                <select class="col-md-5 select">
+                  <option value="">Low</option>
+                  <option value="">Middle</option>
+                  <option value="">High</option>
+                </select>
+              </div>
+              <div class="row config hlc">
+                <div class="col-md-5">
+                  <p class="labels">HLC level</p>
+                </div>
+                <select class="col-md-5">
+                  <option value="">Low</option>
+                  <option value="">Middle</option>
+                  <option value="">High</option>
+                </select>
+              </div>
+              <div class="row config hlc">
+                <div class="col-md-5">
+                  <p class="labels">Mask</p>
+                </div>
+                <select class="col-md-5">
+                  <option value="">Off</option>
+                  <option value="">On</option>
+                  <option value="">Night Only</option>
+                  <option value="">All Day</option>
+                </select>
+              </div>
+              <div class="row config hlc">
+                <div class="col-md-5">
+                  <p class="labels">Mask Color</p>
+                </div>
+                <select class="col-md-5">
+                  <option value="">Black</option>
+                  <option value="">Blue</option>
+                  <option value="">Red</option>
+                  <option value="">Cyan</option>
+                  <option value="">Magenta</option>
+                </select>
+              </div>
+              <div class="row config hlc">
+                <div class="col-md-5">
+                  <p class="labels">Mask Tone</p>
+                </div>
+                <div class="col-md-5 slidecontainer">
+                  <input type="range" min="1" max="100" value="50" class="slider" id="range">
+                </div>
+              </div>
+              <div class="row config hlc">
+                <div class="col-md-5">
+                  <p class="labels">Dimming</p>
+                </div>
+                <select class="col-md-5">
+                  <option value="">Off</option>
+                  <option value="">On</option>
+                </select>
               </div>
             </div>
           </article>
         </div>
-
-        <div class="col-lg-6">
+        <div class="col-lg-5">
           <aside id="command">
             <textarea id="sunapi_command" spellcheck="false" autocomplete="off" wrap="off" placeholder="/* Example: /stw-cgi/system.cgi?msubmenu=deviceinfo&action=view */"></textarea>
           </aside>

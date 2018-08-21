@@ -7,18 +7,35 @@ $(function () {
 
 $(document).ready(function () {
 	$('.IR').click(function() {
-		document.getElementById('sunapi_command').innerHTML += ($(this).val());
+		document.getElementById('sunapi_command').innerHTML = ($(this).val());
 
+	});
+
+	$(".backlight").click(function() {
+		document.getElementById("sunapi_command").innerHTML = ($(this).val());
 	});
 
 });
 
-function changeOption() {
-	var selected = document.getElementById('select').value;
-	document.getElementById('sunapi_command').innerHTML += selected;
-}
 
-function getSelectedValue() {
-	var selected = document.getElementById('select').value;
-	document.getElementById('sunapi_command').innerHTML += selected;
-}
+$(document).ready(function() {
+	$(".check").find("select").change(function() {
+		var val = $(this).val();
+		if(val == "blc") {
+			$(".blc").show();
+			$(".hlc").hide();
+			$(".wdr").hide();
+		} else if (val == "hlc") {
+			$(".blc").hide();
+			$(".hlc").show();
+			$(".wdr").hide();
+		} else if (val == "wdr") {
+			$(".blc").hide();
+			$(".hlc").hide();
+			$(".wdr").show();
+		} else {
+			$(".blc, .hlc, .wdr").hide();			
+		}
+	});
+});
+
