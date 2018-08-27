@@ -6,6 +6,7 @@
   <title>Coming Soon</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="css/test.css">
+  <link href="css/bootstrap-slider.css" rel="stylesheet">
 </head>
 <body>
 
@@ -27,35 +28,35 @@
           <article id="setting">
             <div class="row box-gray">
               <div class="col-md-3 padding-0" id="button1">
-                <button class="btn btn-block collapsed IR" type="button" data-toggle="collapse" data-target="#ir" aria-expanded="true" aria-controls="ir" value="/stw-cgi/image.cgi?msubmenu=irled&action=set">IR</button>
+                <button class="btn btn-block collapsed IR function" type="button" data-toggle="collapse" data-target="#ir" aria-expanded="false" aria-controls="ir" value="/stw-cgi/image.cgi?msubmenu=irled&action=set">IR</button>
               </div>
               <div class="col-md-3 padding-0">
-                <button class="btn btn-block collapsed ssdr" type="button" data-toggle="collapse" data-target="#ssdr" aria-expanded="false" aria-controls="ssdr" value="">SSDR</button>
+                <button class="btn btn-block collapsed ssdr function" type="button" data-toggle="collapse" data-target="#ssdr" aria-expanded="false" aria-controls="ssdr" value="/stw-cgi/SSDR">SSDR</button>
               </div>
               <div class="col-md-3 padding-0">
-                <button class="btn btn-block collapsed whitebalance" type="button" data-toggle="collapse" data-target="#whitebalance" aria-expanded="false" aira-controls="whitebalance" value="">White balance</button>
+                <button class="btn btn-block collapsed whitebalance function" type="button" data-toggle="collapse" data-target="#whitebalance" aria-expanded="false" aira-controls="whitebalance" value="/stw-cgi/WHITEBALANCE">White balance</button>
               </div>
               <div class="col-md-3 padding-0">
-                <button class="btn btn-block collapsed backlight" type="button" data-toggle="collapse" data-target="#backlight" aria-expanded="false" aria-controls="backlight" value="/stw-cgi/image.cgi?msubmenu=camera&action=set">Backlight</button>
+                <button class="btn btn-block collapsed backlight function" type="button" data-toggle="collapse" data-target="#backlight" aria-expanded="false" aria-controls="backlight" value="/stw-cgi/image.cgi?msubmenu=camera&action=set">Backlight</button>
               </div>
             </div>
             <div class="row box-gray">
               <div class="col-md-3 padding-0">
-                <button class="btn btn-block collapsed privacymask" type="button" data-toggle="collapse" data-target="#privacymask" aria-expanded="false" aria-controls="privacymask" value="/stw-cgi/image.cgi?msubmenu=privacy&action=set">Privacy Mask</button>
+                <button class="btn btn-block collapsed privacymask function" type="button" data-toggle="collapse" data-target="#privacymask" aria-expanded="false" aria-controls="privacymask" value="/stw-cgi/image.cgi?msubmenu=privacy&action=set">Privacy Mask</button>
               </div>
               <div class="col-md-3 padding-0">
-                <button class="btn btn-block collapsed alarmout" type="button" data-toggle="collapse" data-target="#alarmout" aria-expanded="false" aria-controls="alarmout" value="/stw-cgi/io.cgi?msubmenu=alarmoutput&action=set">Alarm Output</button>
+                <button class="btn btn-block collapsed alarmout function" type="button" data-toggle="collapse" data-target="#alarmout" aria-expanded="false" aria-controls="alarmout" value="/stw-cgi/io.cgi?msubmenu=alarmoutput&action=set">Alarm Output</button>
               </div>
               <div class="col-md-3 padding-0">
-                <button class="btn btn-block collapsed audio" type="button" data-toggle="collapse" data-target="#audio" aria-expanmded="false" aria-controls="audio" value="/stw-cgi/...">Audio</button>
+                <button class="btn btn-block collapsed audio function" type="button" data-toggle="collapse" data-target="#audio" aria-expanmded="false" aria-controls="audio" value="/stw-cgi/AUDIO...">Audio</button>
               </div>
               <div class="col-md-3 padding-0">
-                <button class="btn btn-block collapsed special" type="button" data-toggle="collapse" data-target="#special" aria-expanded="false" aria-controls="special" value="/stw-cgi/...">Special</button>
+                <button class="btn btn-block collapsed special function" type="button" data-toggle="collapse" data-target="#special" aria-expanded="false" aria-controls="special" value="/stw-cgi/SPECIAL...">Special</button>
               </div>
             </div>
 
             <!-- Button trigger starts here -->
-            <div id="ir" class="collapse show" aria-labelledby="ir" data-parent="#setting">
+            <div id="ir" class="collapse" aria-labelledby="ir" data-parent="#setting">
               <div class="row config">
                 <div class="col-md-5">
                   <p class="labels">Mode</p>
@@ -71,19 +72,20 @@
                   </div>
                 </div>
                 -->
-                <select class="col-md-5 select">
+                <select class="col-md-5 select ir_mode_pameter">
                   <option value="off">Off</option>
-                  <option value="auto1">Auto 1</option>
-                  <option value="auto2">Auto 2</option>
-                  <option value="manual">Manual</option>
+                  <option value="&mode=ir_auto1">Auto 1</option>
+                  <option value="&mode=ir_auto2">Auto 2</option>
+                  <option value="&mode=ir_manual">Manual</option>
                 </select>
               </div>
-              <div class="row config">
+              <div class="row config ir">
                 <div class="col-md-5">
                   <p class="labels">Level</p>
                 </div>
                 <div class="col-md-5 slidecontainer">
-                  <input type="range" min="1" max="100" value="50" class="slider" id="range">
+                  <input type="range" min="1" max="100" value="50" class="slider ir_level_parameter" id="range">
+
                 </div>
               </div>
             </div>
@@ -97,7 +99,7 @@
                   <option value="blc">BLC</option>
                   <option value="hlc">HLC</option>
                   <option value="wdr">WDR</option>
-                </select> 
+                </select>
               </div>
               <div class="row config blc" style="display: none">
                 <div class="col-md-5">
@@ -316,10 +318,10 @@
                 <div class="col-md-5">
                   <p class="labels">Defog</p>
                 </div>
-                <select class="col-md-5">
-                  <option value="">Off</option>
-                  <option value="">Auto</option>
-                  <option value="">Manual</option>
+                <select class="col-md-5 defog_parameter" >
+                  <option value="param_off">Off</option>
+                  <option value="param_auto">Auto</option>
+                  <option  value="param_man">Manual</option>
                 </select>
               </div>
               <div class="row config special">
@@ -335,9 +337,9 @@
             </div>
           </article>
         </div>
-        <div class="col-lg-5">
+        <div id="div_command" class="col-lg-5">
           <aside id="command">
-            <textarea id="sunapi_command" spellcheck="false" autocomplete="off" wrap="off" placeholder="/* Example: /stw-cgi/system.cgi?msubmenu=deviceinfo&action=view */"></textarea>
+            <textarea id="sunapi_command" spellcheck="false" autocomplete="off" wrap="on" value="test" disabled="disabled" ></textarea>
           </aside>
           <aside id="button_container">
             <button type="button" class="btn btn-outline-warning btn-block">Copy</button>
@@ -352,5 +354,59 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <script src="js/script.js"></script>
+
+<!--- ON click builder event-->
+  <script type="text/javascript">
+  var function_value;
+  var previous_function;
+  var previous_parameter;
+$('textarea#sunapi_command').val('Welcome, Let\'s get started!');
+
+$('button.function').on('click', function(){
+    $('textarea#sunapi_command').val('');
+    function_value = this.value;
+    $('textarea#sunapi_command').val(function_value);
+
+});
+
+// when button pressed stay active NOT WORKING WELL
+ $('button').on({
+    focus: function(){
+      $(this).addClass('btn-secondary');
+      previous_function = $(this);
+    },
+    blur: function(){
+      previous_function.removeClass('btn-secondary');
+    }
+
+});
+
+
+ ///PARTIALLY WORKING but you can get the gist of it
+
+//clear append parent value and own value
+//for any class that ENDS in _parameter
+$('[class$="_parameter"]').on('click', function(){
+
+    if (typeof previous_parameter === 'undefined') {
+      // previous parameter was never chosen, then this parameter coming will be that variable
+        previous_parameter = this;
+  }
+  else if( this !== previous_parameter){
+      // It's part of the same parameter group. Let's just append
+      $('textarea#sunapi_command').val( $('textarea#sunapi_command').val() + this.value);
+  }
+  else{
+
+              // Not part of same parameter group ...Clear the entire value
+      $('textarea#sunapi_command').val('');
+      //append function value and insert the current value
+      $('textarea#sunapi_command').val( function_value + this.value);
+  }
+});
+
+
+  </script>
+<!--- ON click builder event-->
 </body>
 </html>
