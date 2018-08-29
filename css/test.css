@@ -54,7 +54,8 @@ header {
 }
 
 #logo img {
-	width: 100%;
+	width: 280px;
+	height: 70px;
 }
 
 
@@ -117,13 +118,17 @@ header {
 }
 
 .box-gray .btn:focus {
-	border-color: inherit;
+	border-color: #fff;
 	-webkit-box-shadow: none;
 	box-shadow: none;
 
 }
 
 .box-gray .btn:hover {
+	background-color: #fff;
+}
+
+.box-gray > div > .active {
 	background-color: #fff;
 }
 
