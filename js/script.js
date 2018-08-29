@@ -80,11 +80,12 @@ $(document).ready(function() {
 
 	    	console.log($parameter_value);
 	    	$(`${currentID}` ).on("change", function() {
+	    		values = "";
 	    		for (var i = 0; i < $parameter_value.length; i++) {
 	    			values += $parameter_value.eq(i).val();
 	    		}
 	    		$("textarea#sunapi_command").val(function_value + values);
-	    		values = "";
+	    		
 	    	});
 	    });
 	    /*$(`${currentID} select` ).on("change", function() {
