@@ -11,8 +11,9 @@ $(document).ready(function() {
 	//
 	//=================================================//
 
-	$(".check").find("select").change(function() {
+	$(".check").find("select").on("change", function() {
 		var val = $(this).val();
+		console.log(val);
 		if(val == "blc") {
 			$(".blc").show();
 			$(".hlc").hide();
@@ -29,6 +30,20 @@ $(document).ready(function() {
 			$(".blc, .hlc, .wdr").hide();			
 		}
 	});
+
+	$( function() {
+    	var handle = $( "#range" );
+    	$( ".slidecontainer" ).slider({
+      		create: function() {
+        		handle.text( $( this ).slider( "value" ) );
+      		},
+      		slide: function( event, ui ) {
+        		handle.text( ui.value );
+      		}
+    	});
+	});
+
+
 
 	//============================================================//
 	//
@@ -62,7 +77,9 @@ $(document).ready(function() {
 	var function_value;
   	var parameter_value;
   	var values;
-  	$('.box-gray > div > .function').click(function(e) {
+  	var parameter_mode;
+  	var i;
+  	$('.box-gray > div > .function').on('click', function(e) {
 
 	  	e.preventDefault();
 		$(".box-gray > div > .function").removeClass("active");
@@ -73,21 +90,24 @@ $(document).ready(function() {
 	    function_value = this.value;
 	    $("textarea#sunapi_command").val(function_value);
 
+
 	    $(function() {
-	    	console.log("I'm in");
-
+	    	
 	    	$parameter_value = $(`${currentID} [class$='_parameter']`);
-
 	    	console.log($parameter_value);
 	    	$(`${currentID}` ).on("change", function() {
+
 	    		values = "";
-	    		for (var i = 0; i < $parameter_value.length; i++) {
+	    		for (i = 0; i < $parameter_value.length; i++) {
 	    			values += $parameter_value.eq(i).val();
+
 	    		}
+
 	    		$("textarea#sunapi_command").val(function_value + values);
-	    		
 	    	});
 	    });
+
+
 	    /*$(`${currentID} select` ).on("change", function() {
 
    			$("textarea#sunapi_command").val(function_value + " " + )
@@ -110,7 +130,6 @@ $(document).ready(function() {
   			console.log(function_value + parameter_value);
 		}).trigger( "change" );*/
 		//}
-	});
-
+	});  	
 });
 

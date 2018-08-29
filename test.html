@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <title>Coming Soon</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <link rel="stylesheet" type="text/css" href="css/test.css">
   <link href="css/bootstrap-slider.css" rel="stylesheet">
 </head>
@@ -62,18 +63,18 @@
                   <p class="labels">Mode</p>
                 </div>
                 <select class="col-md-5 select ir_parameter">
-                  <option value="&amp;ir_param_off">Off</option>
-                  <option value="&amp;ir_param_auto1">Auto 1</option>
-                  <option value="&amp;ir_param_auto2">Auto 2</option>
-                  <option value="&amp;ir_param_manual">Manual</option>
+                  <option value="&amp;param_off">Off</option>
+                  <option value="&amp;param_auto1">Auto 1</option>
+                  <option value="&amp;param_auto2">Auto 2</option>
+                  <option value="&amp;param_manual">Manual</option>
                 </select>
               </div>
               <div class="row config ir">
                 <div class="col-md-5">
                   <p class="labels">Level</p>
                 </div>
-                <div class="col-md-5 slidecontainer">
-                  <input type="range" min="1" max="100" value="50" class="slider ir_level_parameter" id="range">
+                <div class="col-md-5 slidecontainer ir_level_parameter">
+                  <div id="range" min="1" max="100" class="ui-slider-handle slider ir_level_parameter"></div>
                 </div>
               </div>
             </div>
@@ -83,7 +84,7 @@
                   <p class="labels">Mode</p>
                 </div>
                 <select class="col-md-5 select">
-                  <option value="off" selected=selected>Off</option>
+                  <option value="off">Off</option>
                   <option value="blc">BLC</option>
                   <option value="hlc">HLC</option>
                   <option value="wdr">WDR</option>
@@ -93,31 +94,31 @@
                 <div class="col-md-5">
                   <p class="labels">BLC level</p>
                 </div>
-                <select class="col-md-5 select">
-                  <option value="">Low</option>
-                  <option value="">Middle</option>
-                  <option value="">High</option>
+                <select class="col-md-5 select blc_level_parameter">
+                  <option value="&amp;param_low">Low</option>
+                  <option value="&amp;param_middle">Middle</option>
+                  <option value="&amp;param_high">High</option>
                 </select>
               </div>
               <div class="row config hlc" style="display: none">
                 <div class="col-md-5">
                   <p class="labels">HLC level</p>
                 </div>
-                <select class="col-md-5">
-                  <option value="">Low</option>
-                  <option value="">Middle</option>
-                  <option value="">High</option>
+                <select class="col-md-5 hlc_level_parameter">
+                  <option value="&amp;param_low">Low</option>
+                  <option value="&amp;param_middle">Middle</option>
+                  <option value="&amp;param_high">High</option>
                 </select>
               </div>
               <div class="row config hlc" style="display: none">
                 <div class="col-md-5">
                   <p class="labels">Mask</p>
                 </div>
-                <select class="col-md-5">
-                  <option value="">Off</option>
-                  <option value="">On</option>
-                  <option value="">Night Only</option>
-                  <option value="">All Day</option>
+                <select class="col-md-5 mask_parameter">
+                  <option value="&amp;param_off">Off</option>
+                  <option value="&amp;param_on">On</option>
+                  <option value="&amp;param_night_only">Night Only</option>
+                  <option value="&amp;param_all_day">All Day</option>
                 </select>
               </div>
               <div class="row config hlc" style="display: none">
@@ -341,6 +342,8 @@
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script src="js/script.js"></script>
 
 </body>
