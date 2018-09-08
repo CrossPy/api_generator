@@ -29,6 +29,11 @@
           <article id="setting">
             <div class="row box-gray">
               <div class="col-md-3 padding-0" id="button1">
+                <!-- 
+
+                  BUTTONS TO CLICK FOR CATEGORIES 
+
+                -->
                 <button class="btn btn-block collapsed ir function" type="button" data-toggle="collapse" data-target="#ir" aria-expanded="false" aria-controls="ir" aria-presset="true" value="/stw-cgi/image.cgi?msubmenu=irled&action=set">IR</button>
               </div>
               <div class="col-md-3 padding-0">
@@ -41,6 +46,13 @@
                 <button class="btn btn-block collapsed backlight function" type="button" data-toggle="collapse" data-target="#backlight" aria-expanded="false" aria-controls="backlight" value="/stw-cgi/image.cgi?msubmenu=camera&action=set">Backlight</button>
               </div>
             </div>
+
+            <!-- 
+
+              END OF BUTTONS FOR CATEGORIES
+
+            -->
+
             <div class="row box-gray">
               <div class="col-md-3 padding-0">
                 <button class="btn btn-block collapsed privacymask function" type="button" data-toggle="collapse" data-target="#privacymask" aria-expanded="false" aria-controls="privacymask" value="/stw-cgi/image.cgi?msubmenu=privacy&action=set">Privacy Mask</button>
@@ -56,7 +68,18 @@
               </div>
             </div>
 
-            <!-- Button trigger starts here -->
+            <!-- 
+
+              BUTTON TRIGGER STARTS HERE 
+
+            -->
+
+            <!-- 
+
+              START OF IR FEATURES
+
+            -->
+
             <div id="ir" class="collapse" aria-labelledby="ir" data-parent="#setting">
               <div class="row config">
                 <div class="col-md-5">
@@ -78,18 +101,38 @@
                 </div>
               </div>
             </div>
+
+            <!--
+
+              END OF IR FEATURES
+
+            -->
+
+            <!--
+
+              START OF BACKLIGHT FEATURES
+
+            -->
+
             <div id="backlight" class="collapse" aria-labelledby="backlight" data-parent="#setting">
               <div class="row config check">
                 <div class="col-md-5">
                   <p class="labels">Mode</p>
                 </div>
                 <select  autocomplete="off" class="col-md-5 camera_option">
-                  <option selected="selected" value="off">Off</option>
-                  <option value='{"name":"blc", "api":"&blc_parameter"}'>BLC</option>
-                  <option value='{"name":"hlc", "api":"&hlc_parameter"}'>HLC</option>
-                  <option value='{"name":"wdr", "api":"&wdr_parameter"}'>WDR</option>
+                  <option selected="selected" value='{"name":"off"}'>Off</option>
+                  <option value='{"name":"blc", "api":"&amp;blc_parameter"}'>BLC</option>
+                  <option value='{"name":"hlc", "api":"&amp;hlc_parameter"}'>HLC</option>
+                  <option value='{"name":"wdr", "api":"&amp;wdr_parameter"}'>WDR</option>
                 </select>
               </div>
+
+              <!-- 
+
+                BLC STARTS HERE
+
+              -->
+
               <div class="row config blc_container" style="display: none">
                 <div class="col-md-5">
                   <p class="labels">BLC level</p>
@@ -100,6 +143,19 @@
                   <option value="&amp;param_high">High</option>
                 </select>
               </div>
+
+              <!--
+
+                END OF BLC
+
+              -->
+
+              <!-- 
+
+                HLC STARTS HERE
+
+              -->
+
               <div class="row config hlc_container" style="display: none">
                 <div class="col-md-5">
                   <p class="labels">HLC level</p>
@@ -125,69 +181,89 @@
                 <div class="col-md-5">
                   <p class="labels">Mask Color</p>
                 </div>
-                <select autocomplete="off" class="col-md-5">
-                  <option selected="selected" value="">Black</option>
-                  <option value="">Blue</option>
-                  <option value="">Red</option>
-                  <option value="">Cyan</option>
-                  <option value="">Magenta</option>
+                <select autocomplete="off" class="col-md-5 mask_color_parameter">
+                  <option selected="selected" value="&amp;black">Black</option>
+                  <option value="&amp;blue">Blue</option>
+                  <option value="&amp;red">Red</option>
+                  <option value="&amp;cyan">Cyan</option>
+                  <option value="&amp;magenta">Magenta</option>
                 </select>
               </div>
               <div class="row config hlc_container" style="display: none">
                 <div class="col-md-5">
                   <p class="labels">Mask Tone</p>
                 </div>
-                <div class="col-md-5 slidecontainer">
-                  <input type="range" min="1" max="100" value="50" class="slider" id="range">
+                <div id="slider1" class="col-md-5">
+                  <div id="custom-handle1" class="ui-slider-handle ir_level_parameter"></div>
                 </div>
               </div>
               <div class="row config hlc_container" style="display: none">
                 <div class="col-md-5">
                   <p class="labels">Dimming</p>
                 </div>
-                <select autocomplete="off" class="col-md-5">
-                  <option selected="selected" value="">Off</option>
-                  <option value="">On</option>
+                <select autocomplete="off" class="col-md-5 dimming_parameter">
+                  <option selected="selected" value="&param_off">Off</option>
+                  <option value="&param_on">On</option>
                 </select>
               </div>
+
+              <!--
+
+                END OF HLC
+
+              -->
+
+              <!-- 
+
+                WDR STARTS HERE
+
+              -->
+
               <div class="row config wdr_container" style="display: none">
                 <div class="col-md-5">
                   <p class="labels">WDR level</p>
                 </div>
-                <select autocomplete="off" class="col-md-5">
-                  <option selected="selected" value="">Low</option>
-                  <option value="">Middle</option>
-                  <option value="">High</option>
+                <select autocomplete="off" class="col-md-5 wdr_level_parameter">
+                  <option selected="selected" value="&amp;param_low">Low</option>
+                  <option value="&amp;param_middle">Middle</option>
+                  <option value="&amp;param_high">High</option>
                 </select>
               </div>
               <div class="row config wdr_container" style="display: none">
                 <div class="col-md-5">
                   <p class="labels">Auto</p>
                 </div>
-                <div class="col-md-5">
-                  <input type="checkbox" class="checkbox" id="materialUnchecked">
-                  <label class="form-check-label enable" for="autoSizingCheck">Enable</label>
-                </div>
+                <select autocomplete="off" class="col-md-5 auto_parameter">
+                  <option selected="selected" value="&amp;param_Disable">Disable</option>
+                  <option value="&amp;param_Enable">Enable</option>
+                </select>
               </div>
               <div class="row config wdr_container" style="display: none">
                 <div class="col-md-5">
                   <p class="labels">Turn off in low light</p>
                 </div>
-                <div class="col-md-5">
-                  <input type="checkbox" class="checkbox">
-                  <label class="form-check-label enable" for="autoSizingCheck">Enable</label>
-                </div>
+                <select autocomplete="off" class="col-md-5 low_level_parameter">
+                  <option selected="selected" value="&amp;param_Disable">Disable</option>
+                  <option value="&amp;param_Enable">Enable</option>
+                </select>
               </div>
               <div class="row config wdr_container" style="display: none">
                 <div class="col-md-5">
                   <p class="labels">Turn off in B/W</p>
                 </div>
-                <div class="col-md-5">
-                  <input type="checkbox">
-                  <label class="form-check-label" for="autoSizingCheck">Enable</label>
-                </div>
+                <select autocomplete="off" class="col-md-5 bw_parameter">
+                  <option selected="selected" value="&amp;param_Disable">Disable</option>
+                  <option value="&amp;param_Enable">Enable</option>
+                </select>
               </div>
             </div>
+
+            <!-- 
+
+              END OF BACKLIGHT FEATURES
+
+            -->
+
             <div id="privacymask" class="collapse" aria-labelledby="privacymask" data-parent="#setting">
               <div class="row config privacymask">
                 <div class="col-md-5">

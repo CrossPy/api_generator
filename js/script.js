@@ -6,8 +6,8 @@ $(document).ready(function() {
 	var currentID;
 	var parameter_value;
 	var values = "";
-	var handle = $("#custom-handle");
 	var slider_value;
+	var checked;
 
 	$('textarea#sunapi_command').val('Welcome, Let\'s get started!');
 
@@ -41,14 +41,14 @@ $(document).ready(function() {
 			    		$(function() {
 					    	$( "#slider" ).slider({
 		      					create: function() {
-		        					console.log(handle.text( $( this ).slider( "value" )));
+		        					console.log($("#custom-handle").text( $( this ).slider( "value" )));
 		        					
 		      					},
 		      					slide: function( event, ui ) {
-		        					handle.text( ui.value );
+		        					$("#custom-handle").text( ui.value );
 		        					slider_value = ui.value;
 		        					console.log(slider_value);
-		        					$("textarea#sunapi_command").val(function_value + values + "&param_value" + slider_value);
+		        					$("textarea#sunapi_command").val(function_value + values + "&param_value=" + slider_value);
       							}
     						});
 			    		});
@@ -67,7 +67,7 @@ $(document).ready(function() {
 						console.log(option_value['name'])
 						$("textarea#sunapi_command").val(function_value + option_value['api']);
 						$(".blc_container").show();
-						$(".blc_level_parameter").on("change", function() {
+						$(".blc_container > .blc_level_parameter").on("change", function() {
 							parameter_value = $(`${currentID} > .blc_container > [class$='_parameter']`);
 							values = "";
 							for (i = 0; i < parameter_value.length; i++) {
@@ -75,13 +75,35 @@ $(document).ready(function() {
 							}
 							$("textarea#sunapi_command").val(function_value + option_value['api'] + values);
 						})
-					} else if(option_value == "hlc") {
-						$("textarea#sunapi_command").val(function_value);
+					} else if(option_value['name'] == "hlc") {
+						$("textarea#sunapi_command").val(function_value + option_value['api']);
 						$(".hlc_container").show();
-					} else if(option_value == "wdr") {
+						$(".hlc_container > [class$='_parameter']").on("change", function() {
+							parameter_value = $(`${currentID} > .hlc_container > [class$='_parameter']`);
+							console.log(parameter_value);
+							values = ""
+							for (i = 0; i < parameter_value.length; i++) {
+								values += parameter_value.eq(i).val();
+							}
+							$("textarea#sunapi_command").val(function_value + option_value['api'] + values);
+						})
+						
+						// $(".hlc_container > [class$='_")
+					} else if(option_value['name'] == "wdr") {
+						$("textarea#sunapi_command").val(function_value + option_value['api']);
 						$(".wdr_container").show();
+						$(".wdr_container > [class$='_parameter']").on("change", function() {
+							parameter_value = $(`${currentID} > .wdr_container > [class$='_parameter']`);
+							values = "";
+							
+							for (i = 0; i < parameter_value.length; i++) {
+								values += parameter_value.eq(i).val();
+							}
+							$("textarea#sunapi_command").val(function_value + option_value['api'] + values);
+							console.log(parameter_value);
+						})
 					} else {
-						$(".blc, .hlc, .wdr").hide();
+						$(".blc_container, .hlc_container, .wdr_container").hide();
 					}
 				});
 				

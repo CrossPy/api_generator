@@ -199,14 +199,14 @@ header {
 }
 
 /* Range Slider CSS */
-  #custom-handle {
+#custom-handle, #custom-handle1 {
     width: 3em;
     height: 1.6em;
     top: 50%;
     margin-top: -.8em;
     text-align: center;
     line-height: 1.6em;
-  }
+}
 
 /* Alarm Output Radio boxes */
 
