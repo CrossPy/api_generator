@@ -49,12 +49,11 @@ header {
 }
 
 #title_container {
-	border: 1px solid black;
+	
 }
 
 #logo {
 	overflow: auto;
-	border: 1px solid black;
 	overflow-y: hidden;
 	overflow-x: hidden;
 }

@@ -62,8 +62,8 @@
                 <div class="col-md-5">
                   <p class="labels">Mode</p>
                 </div>
-                <select class="col-md-5 select ir_parameter">
-                  <option value="&amp;param_off">Off</option>
+                <select autocomplete="off" class="col-md-5 select ir_parameter">
+                  <option selected="selected" value="&amp;param_off">Off</option>
                   <option value="&amp;param_auto1">Auto 1</option>
                   <option value="&amp;param_auto2">Auto 2</option>
                   <option value="&amp;param_manual">Manual</option>
@@ -83,57 +83,57 @@
                 <div class="col-md-5">
                   <p class="labels">Mode</p>
                 </div>
-                <select class="col-md-5 select">
-                  <option value="off">Off</option>
-                  <option value="blc">BLC</option>
-                  <option value="hlc">HLC</option>
-                  <option value="wdr">WDR</option>
+                <select  autocomplete="off" class="col-md-5 camera_option">
+                  <option selected="selected" value="off">Off</option>
+                  <option value='{"name":"blc", "api":"&blc_parameter"}'>BLC</option>
+                  <option value='{"name":"hlc", "api":"&hlc_parameter"}'>HLC</option>
+                  <option value='{"name":"wdr", "api":"&wdr_parameter"}'>WDR</option>
                 </select>
               </div>
-              <div class="row config blc" style="display: none">
+              <div class="row config blc_container" style="display: none">
                 <div class="col-md-5">
                   <p class="labels">BLC level</p>
                 </div>
-                <select class="col-md-5 select blc_level_parameter">
-                  <option value="&amp;param_low">Low</option>
+                <select autocomplete="off" class="col-md-5 select blc_level_parameter">
+                  <option selected="selected" value="&amp;param_low">Low</option>
                   <option value="&amp;param_middle">Middle</option>
                   <option value="&amp;param_high">High</option>
                 </select>
               </div>
-              <div class="row config hlc" style="display: none">
+              <div class="row config hlc_container" style="display: none">
                 <div class="col-md-5">
                   <p class="labels">HLC level</p>
                 </div>
-                <select class="col-md-5 hlc_level_parameter">
-                  <option value="&amp;param_low">Low</option>
+                <select autocomplete="off" class="col-md-5 hlc_level_parameter">
+                  <option selected="selected" value="&amp;param_low">Low</option>
                   <option value="&amp;param_middle">Middle</option>
                   <option value="&amp;param_high">High</option>
                 </select>
               </div>
-              <div class="row config hlc" style="display: none">
+              <div class="row config hlc_container" style="display: none">
                 <div class="col-md-5">
                   <p class="labels">Mask</p>
                 </div>
-                <select class="col-md-5 mask_parameter">
-                  <option value="&amp;param_off">Off</option>
+                <select autocomplete="off" class="col-md-5 mask_parameter">
+                  <option selected="selected" value="&amp;param_off">Off</option>
                   <option value="&amp;param_on">On</option>
                   <option value="&amp;param_night_only">Night Only</option>
                   <option value="&amp;param_all_day">All Day</option>
                 </select>
               </div>
-              <div class="row config hlc" style="display: none">
+              <div class="row config hlc_container" style="display: none">
                 <div class="col-md-5">
                   <p class="labels">Mask Color</p>
                 </div>
-                <select class="col-md-5">
-                  <option value="">Black</option>
+                <select autocomplete="off" class="col-md-5">
+                  <option selected="selected" value="">Black</option>
                   <option value="">Blue</option>
                   <option value="">Red</option>
                   <option value="">Cyan</option>
                   <option value="">Magenta</option>
                 </select>
               </div>
-              <div class="row config hlc" style="display: none">
+              <div class="row config hlc_container" style="display: none">
                 <div class="col-md-5">
                   <p class="labels">Mask Tone</p>
                 </div>
@@ -141,26 +141,26 @@
                   <input type="range" min="1" max="100" value="50" class="slider" id="range">
                 </div>
               </div>
-              <div class="row config hlc" style="display: none">
+              <div class="row config hlc_container" style="display: none">
                 <div class="col-md-5">
                   <p class="labels">Dimming</p>
                 </div>
-                <select class="col-md-5">
-                  <option value="">Off</option>
+                <select autocomplete="off" class="col-md-5">
+                  <option selected="selected" value="">Off</option>
                   <option value="">On</option>
                 </select>
               </div>
-              <div class="row config wdr" style="display: none">
+              <div class="row config wdr_container" style="display: none">
                 <div class="col-md-5">
                   <p class="labels">WDR level</p>
                 </div>
-                <select class="col-md-5">
-                  <option value="">Low</option>
+                <select autocomplete="off" class="col-md-5">
+                  <option selected="selected" value="">Low</option>
                   <option value="">Middle</option>
                   <option value="">High</option>
                 </select>
               </div>
-              <div class="row config wdr" style="display: none">
+              <div class="row config wdr_container" style="display: none">
                 <div class="col-md-5">
                   <p class="labels">Auto</p>
                 </div>
@@ -169,7 +169,7 @@
                   <label class="form-check-label enable" for="autoSizingCheck">Enable</label>
                 </div>
               </div>
-              <div class="row config wdr" style="display: none">
+              <div class="row config wdr_container" style="display: none">
                 <div class="col-md-5">
                   <p class="labels">Turn off in low light</p>
                 </div>
@@ -178,7 +178,7 @@
                   <label class="form-check-label enable" for="autoSizingCheck">Enable</label>
                 </div>
               </div>
-              <div class="row config wdr" style="display: none">
+              <div class="row config wdr_container" style="display: none">
                 <div class="col-md-5">
                   <p class="labels">Turn off in B/W</p>
                 </div>
@@ -241,7 +241,7 @@
                 <div class="col-md-5">
                   <p class="labels">DIS</p>
                 </div>
-                <select class="col-md-5">
+                <select autocomplete="off" class="col-md-5">
                   <option value="">On</option>
                   <option value="">Off</option>
                 </select>
@@ -250,7 +250,7 @@
                 <div class="col-md-5">
                   <p class="labels">Sharpness</p>
                 </div>
-                <select class="col-md-5">
+                <select autocomplete="off" class="col-md-5">
                   <option value="">On</option>
                   <option value="">Off</option>
                 </select>
@@ -267,7 +267,7 @@
                 <div class="col-md-5">
                   <p class="labels">Gamma</p>
                 </div>
-                <select class="col-md-5">
+                <select autocomplete="off" class="col-md-5">
                   <option value="">0.20</option>
                   <option value="">0.25</option>
                   <option value="">0.30</option>
@@ -307,7 +307,7 @@
                 <div class="col-md-5">
                   <p class="labels">Defog</p>
                 </div>
-                <select class="col-md-5 defog_parameter" >
+                <select autocomplete="off" class="col-md-5 defog_parameter" >
                   <option value="&amp;param_off">Off</option>
                   <option value="&amp;param_auto">Auto</option>
                   <option  value="&amp;param_man">Manual</option>
@@ -317,7 +317,7 @@
                 <div class="col-md-5">
                   <p class="labels">LDC</p>
                 </div>
-                <select class="col-md-5 ldc_parameter">
+                <select autocomplete="off" class="col-md-5 ldc_parameter">
                   <option value="&amp;ldc=off">Off</option>
                   <option value="&amp;ldc=auto">Auto</option>
                   <option value="&amp;ldc=manual">Manual</option>

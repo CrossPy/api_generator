@@ -11,9 +11,11 @@ $(document).ready(function() {
 
 	$('textarea#sunapi_command').val('Welcome, Let\'s get started!');
 
+
 	//=================================================//
 	//
 	// Focus on IR first
+	// Fous on backlight next
 	//
 	//=================================================//
 
@@ -24,7 +26,7 @@ $(document).ready(function() {
 		switch(currentID) {
 			case "#ir":
 				$("textarea#sunapi_command").val(function_value);
-				$(`#setting > ${currentID} > .config [class$='_parameter']`).on("change", function() {
+				$(`${currentID} > .config [class$='_parameter']`).on("change", function() {
 					parameter_value = $(`${currentID} [class$='_parameter']`);
 					values = "";
 					for (i = 0; i < parameter_value.length; i++) {
@@ -56,6 +58,32 @@ $(document).ready(function() {
 				})
 				break;
 			case "#backlight":
+				$("textarea#sunapi_command").val(function_value);
+				console.log(currentID);
+				$(`${currentID} > .config`).find(".camera_option").on("change", function() {
+					var option_value = $.parseJSON($(this).val());
+					$("[class$='_container']").hide();
+					if (option_value['name'] == "blc") {
+						console.log(option_value['name'])
+						$("textarea#sunapi_command").val(function_value + option_value['api']);
+						$(".blc_container").show();
+						$(".blc_level_parameter").on("change", function() {
+							parameter_value = $(`${currentID} > .blc_container > [class$='_parameter']`);
+							values = "";
+							for (i = 0; i < parameter_value.length; i++) {
+								values += parameter_value.eq(i).val();
+							}
+							$("textarea#sunapi_command").val(function_value + option_value['api'] + values);
+						})
+					} else if(option_value == "hlc") {
+						$("textarea#sunapi_command").val(function_value);
+						$(".hlc_container").show();
+					} else if(option_value == "wdr") {
+						$(".wdr_container").show();
+					} else {
+						$(".blc, .hlc, .wdr").hide();
+					}
+				});
 				
 				break;
 			default:
