@@ -280,7 +280,8 @@
                   <p class="labels">Privacy area</p>
                 </div>
                 <select autocomplete="off" class="col-md-5 bw_parameter">
-                  <option selected="selected" value="&amp;param_Disable">Disable</option>
+                  <option selected="selected" value="">---------------</option>
+                  <option value="&amp;param_Disable">Disable</option>
                   <option value="&amp;param_Enable">Enable</option>
                 </select>
               </div>
@@ -413,11 +414,14 @@
           </article>
         </div>
         <div id="div_command" class="col-lg-5">
+          <aside id="ip_container">
+            <input type="text" placeholder="ex: 192.168.1.1" autocomplete="off" id="ip_address">
+          </aside>
           <aside id="command">
-            <textarea id="sunapi_command" spellcheck="false" autocomplete="off" wrap="on" value="test" disabled="disabled" ></textarea>
+            <textarea id="sunapi_command" spellcheck="false" autocomplete="off" wrap="on" readonly="readonly" ></textarea>
           </aside>
           <aside id="button_container">
-            <button type="button" class="btn btn-outline-warning btn-block">Copy</button>
+            <button onclick="copy()" type="button" class="btn btn-outline-warning btn-block">Copy</button>
             <button type="button" class="btn btn-outline-warning btn-block">Clear</button>
           </aside>
           <p id="footer">&copy; 2018 <span class="highlight">Hanwha Techwin</span>, all rights reserved.</p>

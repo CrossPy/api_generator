@@ -34,6 +34,10 @@ body {
   box-shadow: none;
 }
 
+.container {
+	padding: 0;
+}
+
 /* Header */
 
 header {
@@ -101,11 +105,11 @@ header {
 	display: block;
 	background: #333333;
 	border: none;
-	border-radius: 3px;
 	color: #fff;
 	font-weight: bold;
 	font-size: 13px;
 	overflow-x: none;
+	padding: 15px;
 
 }
 
@@ -147,14 +151,16 @@ header {
 
 #button_container .btn {
 	border-radius: 0px;
-	border: 1px solid #FF8C00;
-	color: #FF8C00;
 	font-weight: bold;
+	border: 1px solid #FF8C00;
+	color: #fff;
+	background-color: #FF8C00;
 }
 
 #button_container .btn:hover {
-	background-color: #FF8C00;
-	color: #fff;
+	border: 1px solid #FF8C00;
+	color: #FF8C00;
+	background-color: #fff;
 }
 
 #button_container .btn:focus {
@@ -163,6 +169,33 @@ header {
 	box-shadow: none;
 
 }
+
+#div_command {
+
+}
+
+#div_command > #ip_container {	
+
+}
+
+#div_command > #ip_container > #ip_address {
+	width: 100%;
+	padding: 10px;
+	font-weight: bold;
+	border-radius: 0px;
+	margin-bottom: 10px;
+	border: 1px solid #999;
+	background-color: #fff;
+	opacity: 1;
+
+}
+
+#div_command > #ip_container > #ip_address::placeholder {
+	opacity: 1;
+	color: #ddd;
+}
+
+
 .dropdown {
 
 }
@@ -252,6 +285,7 @@ footer {
 @media (max-width: 600px) {
 	#logo img {
 		width: 200px;
+
 	}
 
 
