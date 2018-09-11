@@ -40,7 +40,7 @@ $(document).ready(function() {
 
 	$('#div_command > #ip_container > #ip_address').on("change", function() { 
      	ip_text = $("#div_command > #ip_container > #ip_address").val();
-     	$('textarea#sunapi_command').val(ip_text);
+     	
     });
 
 	$(".box-gray div > .function").on("click", function() {
@@ -50,7 +50,7 @@ $(document).ready(function() {
 		switch(currentID) {
 			case "#ir":
 				$("textarea#sunapi_command").val(ip_text + function_value);
-				$(`${currentID} > .config [class$='_parameter']`).on("change", function() {
+				$(`${currentID} > .config [class$='_parameter']`).on("change click", function() {
 					parameter_value = $(`${currentID} [class$='_parameter']`);
 					values = "";
 					for (i = 0; i < parameter_value.length; i++) {
