@@ -7,13 +7,20 @@ function copy() {
 	  /* Copy the text inside the text field */
 	  document.execCommand("copy");
 
-	  /* Alert the copied text */
 	  $("textarea#sunapi_command").val("Successfully Copied!")
 	} 
 
 function clearTextArea() {
 	$("textarea#sunapi_command").val("Successfully Cleared");
 }
+
+function ValidateIPaddress(ipaddress) {  
+  if (/^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/.test(ipaddress)) {  
+    return (true)  
+  }  
+  alert("You have entered an invalid IP address!")  
+  return (false)  
+}  
 
 $(document).ready(function() {
 
@@ -39,8 +46,13 @@ $(document).ready(function() {
 	//=================================================//
 
 	$('#div_command > #ip_container > #ip_address').on("change", function() { 
-     	ip_text = $("#div_command > #ip_container > #ip_address").val();
-     	
+     	if (/^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/.test($("#div_command > #ip_container > #ip_address").val())) {  
+			ip_text = $("#div_command > #ip_container > #ip_address").val();
+  		} else {
+  			alert("You have entered an invalid IP address!") 
+  			$("textarea#sunapi_command").val("Invalid IP Address");
+  			ip_text = "<Invalid IP Address>";
+  		}
     });
 
 	$(".box-gray div > .function").on("click", function() {
