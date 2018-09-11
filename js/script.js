@@ -108,6 +108,21 @@ $(document).ready(function() {
 				});
 				
 				break;
+				case "#privacymask":
+					$("textarea#sunapi_command").val(function_value);
+					$(`${currentID} > .config [class$='_parameter']`).on("change", function() {
+						parameter_value = $(`${currentID} [class$='_parameter']`);
+						values = "";
+						for (i = 0; i < parameter_value.length; i++) {
+				    		values += parameter_value.eq(i).val();
+
+				    	}
+
+				    	$("textarea#sunapi_command").val(function_value + values);
+				    });
+
+
+				break;
 			default:
 			textarea = "";
 		}
