@@ -1,16 +1,20 @@
 function copy() {
   /* Get the text field */
-  var copyText = document.getElementById("sunapi_command");
-  console.log(copyText);
-  /* Select the text field */
-  copyText.select();
+	  var copyText = document.getElementById("sunapi_command");
+	  /* Select the text field */
+	  copyText.select();
 
-  /* Copy the text inside the text field */
-  document.execCommand("copy");
+	  /* Copy the text inside the text field */
+	  document.execCommand("copy");
 
-  /* Alert the copied text */
-  alert("Successfully Copied!");
-} 
+	  /* Alert the copied text */
+	  $("textarea#sunapi_command").val("Successfully Copied!")
+	} 
+
+function clearTextArea() {
+	$("textarea#sunapi_command").val("Successfully Cleared");
+}
+
 $(document).ready(function() {
 
 	var function_value = "";
@@ -24,6 +28,7 @@ $(document).ready(function() {
 	var ip_text = "";
 
 	$('textarea#sunapi_command').val('Welcome, Let\'s get started!');
+
 
 
 	//=================================================//
