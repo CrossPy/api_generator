@@ -36,7 +36,16 @@ body {
 }
 
 .container {
-	padding: 0;
+
+}
+
+.row {
+	margin: 0;
+	
+}
+
+.col-md-12 {
+
 }
 
 /* Header */
@@ -161,7 +170,7 @@ element {
 	background-color: #fff;
 }
 
-#button_container .btn {
+#button_container #clear, #button_container #copy{
 	border-radius: 0px;
 	font-weight: bold;
 	border: 1px solid #FF8C00;
@@ -169,17 +178,28 @@ element {
 	background-color: #FF8C00;
 }
 
-#button_container .btn:hover {
+#button_container #clear:hover, #button_container #copy:hover {
 	border: 1px solid #FF8C00;
 	color: #FF8C00;
 	background-color: #fff;
 }
 
-#button_container .btn:focus {
+#button_container #clear:focus, #button_container #copy:focus {
 	border-color: inherit;
 	-webkit-box-shadow: none;
 	box-shadow: none;
 
+}
+
+#button_container #test {
+	border-radius: 0px;
+	font-weight: bold;
+
+}
+
+#button_container #test:hover {
+	background-color: #fff;
+	color: #28a745;;
 }
 
 #div_command {
