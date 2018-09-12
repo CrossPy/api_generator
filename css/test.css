@@ -91,6 +91,14 @@ header {
 	margin-bottom: -50px;
 }
 
+/* Dialog Box */
+element {
+	width: 500px !important;
+}
+#dialog-message {
+	
+}
+
 /* Sidebar */
 
 #command {
